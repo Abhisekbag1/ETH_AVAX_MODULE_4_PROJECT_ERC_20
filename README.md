@@ -3,10 +3,7 @@
 # Degen Gaming ERC20 Token
 # Introduction
 
-Welcome to the Degen Gaming Token (DEGEN) repository! This repository contains the Solidity smart contract code for the DEGEN token, an ERC-20 compatible token designed for gaming purposes on the Avalanche Fuji Test Network. DEGEN tokens can be used for various in-game activities, rewards, and transactions within the gaming ecosystem.
-
-This README file provides an overview of the DEGEN token contract and includes instructions on how to deploy the contract to the Avalanche Fuji Test Network using Remix Injector and how to interact with it using Remix.
-
+This is a smart contract for the Degen Gaming ERC20 token deployed on the Avalanche network. The contract provides functionality for minting new tokens, transferring tokens, redeeming tokens for in-game items, checking token balances, and burning tokens.
 
 
 ## Contract Details
