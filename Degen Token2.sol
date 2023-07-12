@@ -6,7 +6,13 @@ import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract DegenToken is ERC20, ERC20Burnable, Ownable{
-    constructor() ERC20("DegenToken","DGN"){}
+     string[] public myArray;
+    constructor() ERC20("DegenToken","DGN"){ myArray = new string[](4);
+
+        myArray[0] = "Item 1";
+        myArray[1] = "Item 2";
+        myArray[2] = "Item 3";
+        myArray[3] = "Item 4";}
 
     function mint(address recipient, uint256 amount) external onlyOwner{
         _mint(recipient,amount);
@@ -18,8 +24,16 @@ contract DegenToken is ERC20, ERC20Burnable, Ownable{
         return true;
     }
 
-    function redeem(uint256 amount) external {
-        require(amount > 0,"Amount must be greater than zero.");
+    function redeem(uint256 itemId,uint256 amount) public payable  {
+          require(
+            bytes(myArray[itemId]).length > 0,
+            "Item does not exist"
+        );
+
+        require(
+            balanceOf(msg.sender) > 0,
+            "Insufficient balance"
+        );
         _burn(_msgSender(),amount);
     }
 
